@@ -1,3 +1,3 @@
-# Javascript Game
+# Module Javascript Game
 
-> Voorbeeld van image rendering naar canvas
+> Voorbeeld van image-rendering naar canvas
