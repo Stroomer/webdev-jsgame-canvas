@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canvas</title>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    img {
+      display: none;
+    }
+  </style>
+  <script type="module">
+    import {
+      Background
+    } from '/classes/Background.js';
+    import {
+      Koen
+    } from '/classes/Koen.js';
+    import {
+      Thomas
+    } from '/classes/Thomas.js';
+    import {
+      Lukas
+    } from '/classes/Lukas.js';
+
+    window.addEventListener('load', function() {
+      const canvas = document.querySelector('canvas');
+      const context = canvas.getContext('2d');
+
+      canvas.width = 960;
+      canvas.height = 540;
+
+      const entities = [new Background()];
+
+      let frameTime = {
+        previous: 0,
+        secondsPassed: 0,
+      };
+
+      function frame(time) {
+        window.requestAnimationFrame(frame);
+
+        frameTime = {
+          secondsPassed: (time - frameTime.previous) / 1000,
+          previous: time,
+        };
+
+        context.clearRect(0, 0, canvas.width, canvas.height);
+
+        for (const entity of entities) {
+          entity.update(frameTime, context);
+        }
+
+        for (const entity of entities) {
+          entity.draw(context);
+        }
+      }
+
+      window.requestAnimationFrame(frame);
+
+      canvas.addEventListener('mousedown', (event) => {
+        const x = event.clientX;
+        const y = event.clientY;
+        const randomNum = Math.floor(Math.random() * 3);
+
+        switch (randomNum) {
+          case 0:
+            entities.push(new Koen(x, y));
+            break;
+          case 1:
+            entities.push(new Thomas(x, y));
+            break;
+          case 2:
+            entities.push(new Lukas(x, y));
+            break;
+        }
+      });
+
+    });
+  </script>
+</head>
+
+<body>
+  <canvas></canvas>
+
+  <img src="/images/background.png" alt="background">
+  <img src="/images/keun.png" alt="koen">
+  <img src="/images/thone.png" alt="thomas">
+  <img src="/images/lucash.png" alt="lukas">
+</body>
+
+</html>
