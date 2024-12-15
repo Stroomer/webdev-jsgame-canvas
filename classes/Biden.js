@@ -1,6 +1,6 @@
-export class Koen {
+export class Biden {
   constructor(x, y) {
-    this.image = document.querySelector('img[alt="koen"]');
+    this.image = document.querySelector('img[alt="biden"]');
 
     this.position = { x, y };
     this.position.x -= this.image.width / 2;

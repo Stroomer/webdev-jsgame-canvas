@@ -1,6 +1,6 @@
-export class Thomas {
+export class Trump {
   constructor(x, y) {
-    this.image = document.querySelector('img[alt="thomas"]');
+    this.image = document.querySelector('img[alt="trump"]');
     this.position = { x: x - this.image.width / 2, y: y - this.image.height / 2 };
     this.velocity = { x: parseInt(Math.random() * 100), y: parseInt(Math.random() * 100) };
     this.rotation = 360;

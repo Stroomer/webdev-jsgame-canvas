@@ -1,6 +1,6 @@
-export class Lukas {
+export class Harris {
   constructor(x, y) {
-    this.image = document.querySelector('img[alt="lukas"]');
+    this.image = document.querySelector('img[alt="harris"]');
     this.position = { x: x - this.image.width / 2, y: y - this.image.height / 2 };
     this.velocity = { x: 0, y: 100 };
   }

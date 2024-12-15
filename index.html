@@ -22,21 +22,21 @@
       Background
     } from '/classes/Background.js';
     import {
-      Koen
-    } from '/classes/Koen.js';
+      Biden
+    } from '/classes/Biden.js';
     import {
-      Thomas
-    } from '/classes/Thomas.js';
+      Trump
+    } from '/classes/Trump.js';
     import {
-      Lukas
-    } from '/classes/Lukas.js';
+      Harris
+    } from '/classes/Harris.js';
 
     window.addEventListener('load', function() {
       const canvas = document.querySelector('canvas');
       const context = canvas.getContext('2d');
 
-      canvas.width = 960;
-      canvas.height = 540;
+      canvas.width = 1280;
+      canvas.height = 720;
 
       const entities = [new Background()];
 
@@ -73,13 +73,13 @@
 
         switch (randomNum) {
           case 0:
-            entities.push(new Koen(x, y));
+            entities.push(new Biden(x, y));
             break;
           case 1:
-            entities.push(new Thomas(x, y));
+            entities.push(new Trump(x, y));
             break;
           case 2:
-            entities.push(new Lukas(x, y));
+            entities.push(new Harris(x, y));
             break;
         }
       });
@@ -92,9 +92,9 @@
   <canvas></canvas>
 
   <img src="/images/background.png" alt="background">
-  <img src="/images/keun.png" alt="koen">
-  <img src="/images/thone.png" alt="thomas">
-  <img src="/images/lucash.png" alt="lukas">
+  <img src="/images/biden.png" alt="biden">
+  <img src="/images/trump.png" alt="trump">
+  <img src="/images/harris.png" alt="harris">
 </body>
 
 </html>
